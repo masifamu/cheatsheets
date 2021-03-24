@@ -375,8 +375,8 @@ int main(){
 }
 ```
 
-Problem: The problem is that you are mixing 'getline' with 'cin >> input'.
-When you do 'cin >> select;', that gets the select from the input stream, but it leaves whitespace on the stream. Specifically, it will leave a newline on the input stream, which then gets read by the next getline call as an empty line.
+Problem: The problem is that you are mixing `getline` with `cin >> input`.
+When you do `cin >> select;`, that gets the select from the input stream, but it leaves whitespace on the stream. Specifically, it will leave a newline on the input stream, which then gets read by the next getline call as an empty line.
 
 To solve this problem `std::cin.ignore(n, ch)` can be used where **n** is the
 number of character to ignore from the input stream before **ch** character is
